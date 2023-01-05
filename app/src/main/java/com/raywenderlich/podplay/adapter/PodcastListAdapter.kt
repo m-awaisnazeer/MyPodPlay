@@ -31,13 +31,17 @@
 package com.raywenderlich.podplay.adapter
 
 import android.app.Activity
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.disklrucache.DiskLruCache.Editor
 import com.raywenderlich.podplay.R
 import com.raywenderlich.podplay.viewmodel.SearchViewModel.PodcastSummaryViewData
 import kotlinx.android.synthetic.main.search_item.view.*
@@ -70,6 +74,24 @@ class PodcastListAdapter(
   fun setSearchData(podcastSummaryViewData: List<PodcastSummaryViewData>) {
     podcastSummaryViewList = podcastSummaryViewData
     this.notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
+
+      notifyDataSetChanged()
   }
 
   override fun onCreateViewHolder(
