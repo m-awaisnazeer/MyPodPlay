@@ -69,21 +69,10 @@ jobs:
 
   detekt:
     runs-on: ubuntu-latest
-    steps: #1
-      - name: Run a log message #2
-        run: echo This is my job for running detekt checks! #3
 
-      - uses: actions/checkout@v2
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
 
-      - name: set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
-
-      - uses: github/codeql-action/upload-sarif@v2
-        with:
-            sarif_file: build/report.sarif
-            category: lint
-
-#      - name: detekt
-#         run: ./gradlew detekt
+      - name: "detekt"
+        uses: natiginfo/action-detekt-all@1.22.0
