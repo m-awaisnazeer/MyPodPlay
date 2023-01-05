@@ -67,13 +67,12 @@ jobs:
         run: ./gradlew lint
 
 
-  detekt:
+  deteKt:
     runs-on: ubuntu-latest
-
     steps:
         uses: actions/checkout@v2
 
-      - name: detekt
+      - name: "detekt"
         uses: ./gradlew detekt
 
 
