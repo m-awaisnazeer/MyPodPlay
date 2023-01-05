@@ -66,16 +66,6 @@ jobs:
       - name: Unit tests
         run: ./gradlew lint
 
-
-  deteKt:
-    runs-on: ubuntu-latest
-    steps:
-        uses: actions/checkout@v2
-
-      - name: "detekt"
-        uses: ./gradlew detekt
-
-
   detekt-cli:
     runs-on: ubuntu-latest
 
