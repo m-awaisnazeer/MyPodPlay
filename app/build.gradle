@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "io.gitlab.arturbosch.detekt"
 
 android {
   signingConfigs {
@@ -83,6 +84,24 @@ android {
     jvmTarget = JavaVersion.VERSION_1_8.toString()
   }
   // dynamicFeatures = [':installTimeDeliveryExample', ':onDemandDeliveryExample', ':conditionalDeliveryExample', ':instantModuleExample']
+  lint {
+    sarifReport true
+    // optional, otherwise build/reports/lint-results-debug.sarif
+    sarifOutput file("lint.sarif")
+  }
+
+}
+
+detekt {
+  basePath = rootProject.projectDir
+}
+
+tasks.named("detekt").configure {
+  reports {
+    sarif.required.set(true)
+    // optional, otherwise build/reports/detekt/detekt.sarif
+    reports.sarif.outputLocation.set(file("detekt.sarif"))
+  }
 }
 
 dependencies {
