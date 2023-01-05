@@ -77,4 +77,4 @@ jobs:
           add_to_path: false
 
       - name: Run detekt
-        run: ${{ steps.setup_detekt.outputs.detekt }}/detekt-cli --version
+        run: ./gradlew detekt
