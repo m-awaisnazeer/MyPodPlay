@@ -48,3 +48,6 @@ jobs:
       - name: Unit tests
         run: ./gradlew test
 
+      - name: Run link checks
+          run: ./gradlew lint
+
